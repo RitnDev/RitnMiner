@@ -1,0 +1,212 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.8.5
+Date: 04.01.2023
+  Fixes:
+    - Fix control -> module : disco-science
+---------------------------------------------------------------------------------------------------
+Version: 0.8.4
+Date: 04.01.2023
+  Changes:
+    - Compatibilité avec RitnLib 0.7.3
+---------------------------------------------------------------------------------------------------
+Version: 0.8.3
+Date: 02.01.2023
+  Adds:
+    - Ajout de la compatibilité du mod RitnWaterfill.
+    - Ajout de la compatibilité du mod Dectorio.
+  Changes:
+    - Changement du coût des technologies de Dectorio.
+---------------------------------------------------------------------------------------------------
+Version: 0.8.2
+Date: 01.01.2023
+  Fixes:
+    - Fix de info.json : mod optionnelle - CommuLogo.
+---------------------------------------------------------------------------------------------------
+Version: 0.8.1
+Date: 28.12.2022
+  Fixes:
+    - Fix de la localisation : [map-gen-preset-description][Ritn]
+  Changes:
+    - Renommage prototype : recipe-miner-mk1 -> miner_mk1
+    - Renommage prototype : recipe-miner-mk2 -> miner_mk2
+---------------------------------------------------------------------------------------------------
+Version: 0.8.0
+Date: 16.12.2022
+  Changes:
+    - Compatibilité avec RitnLib 0.7
+  Adds:
+    - Ajout d'un map presets pour RitnMods.
+---------------------------------------------------------------------------------------------------
+Version: 0.7.5
+Date: 08.03.2022
+  Removes:
+    - Suppression de la pierre broyée et du traitement lié à l'extraction du minerai.
+---------------------------------------------------------------------------------------------------
+Version: 0.7.4
+Date: 08.03.2022
+  Changes:
+    - Ajustement du coût de la recette des pack de science de mineur (elles sont un peu chère).
+    - Ajustement des recettes du traitement de la pierre broyée, pour donner plus de pierre en retour.
+    - Ajustement du coût des recettes d'extraction du minerai par broyeur (diminution de la rentabilité).
+    - L'extraction par broyeur renvoie plus de pierre broyée.
+    - Consommation électrique des broyeurs revue à la baisse.
+---------------------------------------------------------------------------------------------------
+Version: 0.7.3
+Date: 06.03.2022
+  Fixes:
+    - Fix du temps de fabrication des recettes lié à la transforamtion de la pierre broyée en brique.
+      Diminution de celui-ci (96s -> 16s).
+  Changes:
+    - Petite augmentation du temps de broyage de la brique pour en faire de la pierre.
+---------------------------------------------------------------------------------------------------
+Version: 0.7.2
+Date: 06.03.2022
+  Changes:
+    - Changement dans les temps de fabrication des recettes lié à la transforamtion de la pierre broyée en brique.
+    - Ajout d'eau dans la recette des brique en pierre bio. (bi-stone-brick)
+---------------------------------------------------------------------------------------------------
+Version: 0.7.1
+Date: 05.03.2022
+  Changes:
+    - Suppression de la technologie "advanced-oil-processing" et changement d'emplacement des recettes lié a cette technologie.
+    - Changement dans les recettes d'extraction de minerais si RitnGlass et BioIndustries sont activés.
+---------------------------------------------------------------------------------------------------
+Version: 0.7.0
+Date: 25.01.2022
+  Changes:
+    - Compatibilité avec BioIndustries.
+    - Les pack de science de mineur sont maintenant demandé pour faire les chimiques.
+      permet une longévité de la pack de science.
+    - Adaptation des technologies.
+    - Code des broyeurs mis à jour.
+    - Compatibilité avec RitnLib 0.6
+---------------------------------------------------------------------------------------------------
+Version: 0.5.6
+Date: 22.12.2021
+  Notes:
+    - Compatibilité avec RitnLib 0.5.5
+---------------------------------------------------------------------------------------------------
+Version: 0.5.5
+Date: 14.12.2021
+  Fixes:
+    - fix : compatibilité avec les mods ajoutés qui possède des technologies avec des prérequis de recherches désactivés.
+---------------------------------------------------------------------------------------------------
+Version: 0.5.4
+Date: 14.12.2021
+  Fixes:
+    - fix : compatibilité avec les mods ajoutés qui possède des technologies avec des prérequis de recherches désactivés.
+---------------------------------------------------------------------------------------------------
+Version: 0.5.3
+Date: 12.11.2021
+  Notes:
+    - Compatibilité avec RitnLib 0.5.
+---------------------------------------------------------------------------------------------------
+Version: 0.5.2
+Date: 16.03.2021
+  Changes:
+    - Changement de l'image pour la technologie : miner-science-pack.
+---------------------------------------------------------------------------------------------------
+Version: 0.5.1
+Date: 13.03.2021
+  Changes:
+    - Changement mineur.
+---------------------------------------------------------------------------------------------------
+Version: 0.5.0
+Date: 22.02.2021
+  Notes:
+    - Mod stable.
+  Changes:
+    - Mise à jour de control.lua
+---------------------------------------------------------------------------------------------------
+Version: 0.4.8
+Date: 19.02.2021
+  Fixes:
+    - Compatibilité à la version 1.1 du jeu. (graphics)
+  Changes:
+    - Suppression des recettes de désassemblage.
+---------------------------------------------------------------------------------------------------
+Version: 0.4.7
+Date: 23.01.2021
+  Notes:
+    - Compatibilité à la version 1.1 du jeu.
+---------------------------------------------------------------------------------------------------
+Version: 0.4.6
+Date: 28.11.2020
+  Changes:
+    - Possibilité de mettre des modules de productivité dans la recette de "Pétrole de Schiste".
+    - Possibilité de mettre des modules de productivité dans les recettes d'extractions de minerais.
+    - Possibilité de mettre des modules de productivité dans la recette de "Miner Science Pack".
+---------------------------------------------------------------------------------------------------
+Version: 0.4.5
+Date: 12.11.2020
+  Changes:
+    - Changement des teintes de la pack mineur et militaire.
+---------------------------------------------------------------------------------------------------
+Version: 0.4.4
+Date: 11.11.2020
+  Changes:
+    - Grace à la mise à jour de RitnLib il n'y a plus de conflit avec Bob's Ores.
+---------------------------------------------------------------------------------------------------
+Version: 0.4.3
+Date: 11.11.2020
+  Changes:
+    - Compatibilité avec RitnLib 0.3.
+---------------------------------------------------------------------------------------------------
+Version: 0.4.2
+Date: 05.09.2020
+  Adds:
+    - La teinte dsur les recettes d'extractions de fer et cuivre dans les usines chimiques.
+---------------------------------------------------------------------------------------------------
+Version: 0.4.1
+Date: 05.09.2020
+  Fixes:
+    - Correction apporté lié à RitnLib.
+  Changes:
+    - Intégration de "event-listener" dans le mod RitnLib.
+    - Début de compatibilité avec les mods "angel's".
+---------------------------------------------------------------------------------------------------
+Version: 0.4.0
+Date: 15.08.2020
+  Notes:
+    - Passage en 1.0
+---------------------------------------------------------------------------------------------------
+Version: 0.3.2
+Date: 23.07.2020
+  Changes:
+    - Changement mineur sur les technologies.
+---------------------------------------------------------------------------------------------------
+Version: 0.3.1
+Date: 22.07.2020
+  Changes:
+    - Déplacement de l'update du mod "CommuLogo" dans le data-update.
+---------------------------------------------------------------------------------------------------
+Version: 0.3.0
+Date: 14.07.2020
+  Adds :
+    - Ajout d'un début de compatibilité avec Dectorio.
+    - Incompatibilité avec MorePlaceableTiles pour garder la cohérence de la compatibilité de Dectorio.
+  Changes:
+    - Mise en place de l'Event-listener sur le mod.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.10
+Date: 18.06.2020
+  Changes:
+    - Intègre directement les couleurs des Usines chimiques au lieu de le faire dans "RitnGlass".
+    - Mise à jour des icônes.
+    - Change la recette d'extraction de minerais. Maintenant il y a un système de probabilité qui rentre en jeu.
+---------------------------------------------------------------------------------------------------
+Version: 0.2.9
+Date: 27.04.2020
+  Changes:
+    - Supprime la recette "spaceblock-matter-refinery" quand on utilise le mod "SpaceBlock".
+---------------------------------------------------------------------------------------------------
+Version: 0.2.8
+Date: 27.04.2020
+  Changes:
+    - Intègre directement les couleurs des labos quand on ajoute le mod "DiscoScience".
+    - Supprime la recherche "Remblai" quand on utilise le mod "SpaceBlock".
+---------------------------------------------------------------------------------------------------
+Version: 0.2.7
+Date: 27.04.2020
+  Changes:
+    - Passage en version 0.18 du jeu.
