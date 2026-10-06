@@ -1,18 +1,3 @@
--- TODO Factorio 2.1 : ce preset "ritn" est au format 1.1 et fait planter le chargement :
---   Error while running setup for map gen preset "ritn": unexpected content;
---   map-gen-preset can't have extra values in property tree at ROOT.basic_settings.terrain_segmentation
--- Correction (deja appliquee dans RitnLumberjack/prototypes/map-gen-presets.lua) :
---   * basic_settings.terrain_segmentation / water -> autoplace control "water" :
---       autoplace_controls["water"] = { frequency = <terrain_segmentation>, size = <water> }
---   * property_expression_names : "control-setting:*" -> "control:*"
---       "control-setting:aux:bias"                       -> "control:aux:bias"
---       "control-setting:aux:frequency:multiplier"       -> "control:aux:frequency"
---       "control-setting:moisture:bias"                  -> "control:moisture:bias"
---       "control-setting:moisture:frequency:multiplier"  -> "control:moisture:frequency"
---   * supprimer advanced_settings.difficulty_settings.research_queue_setting
---     (la file de recherche est toujours active depuis la 2.0)
-
-
 if data.raw["map-gen-presets"]["default"]["ritn"] == nil then
 
 data.raw["map-gen-presets"]["default"]["ritn"] =
@@ -32,25 +17,26 @@ data.raw["map-gen-presets"]["default"]["ritn"] =
                     frequency = 0.5,
                     size = 0.75,
                     richness = 1
+                },
+            -- Factorio 2.0+ : l'eau est un autoplace control
+            -- (ex terrain_segmentation -> frequency, ex water -> size)
+            ["water"] = 
+                {
+                    frequency = 0.5,
+                    size = 0.33333334326744
                 }
             },
-            terrain_segmentation = 0.5,
-            water = 0.33333334326744,
             starting_area = 2,
             cliff_settings = {richness = 0},
             property_expression_names = {
-                ["control-setting:aux:bias"] = "0.35",
-                ["control-setting:aux:frequency:multiplier"] = "0.5",
-                ["control-setting:moisture:bias"] = "0.1",
-                ["control-setting:moisture:frequency:multiplier"] = "0.5",
+                ["control:aux:bias"] = "0.35",
+                ["control:aux:frequency"] = "0.5",
+                ["control:moisture:bias"] = "0.1",
+                ["control:moisture:frequency"] = "0.5",
             }
         },
         advanced_settings =
         {
-            difficulty_settings =
-            {
-                research_queue_setting = "always"
-            },
             enemy_expansion = { enabled = false },
             enemy_evolution = 
             {

@@ -4,7 +4,7 @@ data:extend({
         type = "technology",
         name = "shale-oil",
         icon = "__RitnMiner__/graphics/technology/shale-oil.png",
-        icon_size = 256, icon_mipmaps = 1,
+        icon_size = 256,
         effects = {
           {type = "unlock-recipe", recipe = "shale-oil"},
         },

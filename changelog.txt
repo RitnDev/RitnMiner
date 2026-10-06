@@ -1,4 +1,50 @@
 ---------------------------------------------------------------------------------------------------
+Version: 0.9.0
+Date: 06.10.2026
+  Changes:
+    - Migration vers Factorio 2.1 et RitnLib 0.10.7.
+    - Recettes au format 2.1 : categories, ingredients/results complets, independent_probability,
+      suppression des recettes normal/expensive (valeurs normal conservees).
+    - Productivite : allow_productivity sur les recettes d'extraction 3 a 9, le pack Mineur et le
+      petrole de schiste (remplace les listes limitation des modules).
+    - Broyeurs : graphics_set, module_slots, emissions_per_minute au format 2.x.
+    - Preset de carte "ritn" au format 2.x (eau en autoplace control, control:*).
+    - oil-processing repasse en cout de recherche (100 x automatisation, Mineur, logistique) a la place
+      du declencheur "miner du petrole brut" ; la technologie oil-gathering est desactivee.
+    - steel-axe, space-science-pack et uranium-processing gardent leur declencheur vanilla 2.1.
+    - Compatibilite Bio Industries : basee sur RitnLumberjack (qui l'integre) ; Bio_Industries_2 est
+      incompatible.
+    - Dependances optionnelles RitnLumberjack et RitnGlass retirees en attendant leur migration 2.1.
+    - CommuLogo : prerequis optics remplace par lamp.
+    - Technologie miner-science-pack reactivee : debloquee en fabriquant 100 briques de pierre, elle
+      debloque la recette du pack Mineur, stone-processing, iron-plate, copper-plate, iron-chest,
+      iron-gear-wheel, burner-inserter, transport-belt et burner-mining-drill (plus disponibles des le
+      depart). Elle devient prerequis de
+      electronics, steam-power, ritn-tech-miner-mk1 et landfill.
+    - oil-processing : prerequis oil-gathering remplace par fluid-handling ; le pumpjack reste non
+      debloquable (comme en 1.x).
+    - Broyeurs : working_visualisations retirees, seule l'animation est conservee (graphics_set).
+    - Icones composees des recettes (extraction, desassemblage, pierre, briques) construites via
+      RitnLib (getIconLayers) au lieu d'etre recopiees a la main.
+    - Generateur de recettes d'extraction reecrit en boucles (recettes inchangees).
+    - Bio Industries : la recette bi-wooden-pole-big n'est plus ajoutee a
+      electric-energy-distribution-1 (le cas Bio Industries sans RitnLumberjack n'existe plus).
+  Bugfixes:
+    - DiscoScience : la couleur du pack passe par l'event_handler (on_init ne l'ecrase plus).
+    - Locale FR : cle miner_mk2 ; "Broyeur de pierres avancee" corrige en "avance".
+    - Position du pack Mineur dans les labs : se base sur ritnmods.miner.lumberjack (RitnLumberjack
+      actif) et non plus sur la seule presence de ritnmods.lumberjack.
+  Modding:
+    - ritnmods.miner.bio supprime : utiliser ritnmods.miner.lumberjack.
+    - Annotations LuaLS bilingues (EN/FR) : ritnmods.miner, generateur ritnmods.miner.data,
+      modules runtime et table de swap des recettes.
+    - Nouveau meta-file types/ritnminer-globals.lua (non charge par Factorio) : autocompletion LuaLS
+      de ritnmods.miner pour les mods qui dependent de RitnMiner.
+  Info:
+    - Documentation mainteneur : docs/architecture.md et docs/audit/handoff.md (exclues du zip).
+    - Publication automatique : workflow GitHub (release + envoi sur le Mod Portal a chaque tag) et
+      .gitattributes (.github, docs, tests et .vscode exclus du zip).
+---------------------------------------------------------------------------------------------------
 Version: 0.8.6
 Date: 26.06.2024
   Changes:
@@ -6,7 +52,7 @@ Date: 26.06.2024
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.5
 Date: 04.01.2023
-  Fixes:
+  Bugfixes:
     - Fix control -> module : disco-science
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.4
@@ -16,7 +62,7 @@ Date: 04.01.2023
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.3
 Date: 02.01.2023
-  Adds:
+  Features:
     - Ajout de la compatibilité du mod RitnWaterfill.
     - Ajout de la compatibilité du mod Dectorio.
   Changes:
@@ -24,12 +70,12 @@ Date: 02.01.2023
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.2
 Date: 01.01.2023
-  Fixes:
+  Bugfixes:
     - Fix de info.json : mod optionnelle - CommuLogo.
 ---------------------------------------------------------------------------------------------------
 Version: 0.8.1
 Date: 28.12.2022
-  Fixes:
+  Bugfixes:
     - Fix de la localisation : [map-gen-preset-description][Ritn]
   Changes:
     - Renommage prototype : recipe-miner-mk1 -> miner_mk1
@@ -39,12 +85,12 @@ Version: 0.8.0
 Date: 16.12.2022
   Changes:
     - Compatibilité avec RitnLib 0.7
-  Adds:
+  Features:
     - Ajout d'un map presets pour RitnMods.
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.5
 Date: 08.03.2022
-  Removes:
+  Changes:
     - Suppression de la pierre broyée et du traitement lié à l'extraction du minerai.
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.4
@@ -58,7 +104,7 @@ Date: 08.03.2022
 ---------------------------------------------------------------------------------------------------
 Version: 0.7.3
 Date: 06.03.2022
-  Fixes:
+  Bugfixes:
     - Fix du temps de fabrication des recettes lié à la transforamtion de la pierre broyée en brique.
       Diminution de celui-ci (96s -> 16s).
   Changes:
@@ -88,22 +134,22 @@ Date: 25.01.2022
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.6
 Date: 22.12.2021
-  Notes:
+  Info:
     - Compatibilité avec RitnLib 0.5.5
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.5
 Date: 14.12.2021
-  Fixes:
+  Bugfixes:
     - fix : compatibilité avec les mods ajoutés qui possède des technologies avec des prérequis de recherches désactivés.
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.4
 Date: 14.12.2021
-  Fixes:
+  Bugfixes:
     - fix : compatibilité avec les mods ajoutés qui possède des technologies avec des prérequis de recherches désactivés.
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.3
 Date: 12.11.2021
-  Notes:
+  Info:
     - Compatibilité avec RitnLib 0.5.
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.2
@@ -118,21 +164,21 @@ Date: 13.03.2021
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.0
 Date: 22.02.2021
-  Notes:
+  Info:
     - Mod stable.
   Changes:
     - Mise à jour de control.lua
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.8
 Date: 19.02.2021
-  Fixes:
+  Bugfixes:
     - Compatibilité à la version 1.1 du jeu. (graphics)
   Changes:
     - Suppression des recettes de désassemblage.
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.7
 Date: 23.01.2021
-  Notes:
+  Info:
     - Compatibilité à la version 1.1 du jeu.
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.6
@@ -159,12 +205,12 @@ Date: 11.11.2020
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.2
 Date: 05.09.2020
-  Adds:
+  Features:
     - La teinte dsur les recettes d'extractions de fer et cuivre dans les usines chimiques.
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.1
 Date: 05.09.2020
-  Fixes:
+  Bugfixes:
     - Correction apporté lié à RitnLib.
   Changes:
     - Intégration de "event-listener" dans le mod RitnLib.
@@ -172,7 +218,7 @@ Date: 05.09.2020
 ---------------------------------------------------------------------------------------------------
 Version: 0.4.0
 Date: 15.08.2020
-  Notes:
+  Info:
     - Passage en 1.0
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.2
@@ -187,7 +233,7 @@ Date: 22.07.2020
 ---------------------------------------------------------------------------------------------------
 Version: 0.3.0
 Date: 14.07.2020
-  Adds :
+  Features:
     - Ajout d'un début de compatibilité avec Dectorio.
     - Incompatibilité avec MorePlaceableTiles pour garder la cohérence de la compatibilité de Dectorio.
   Changes:

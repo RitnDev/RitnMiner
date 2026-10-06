@@ -11,6 +11,7 @@ data:extend({
           {type = "unlock-recipe", recipe = "copper-ore-extraction-0"},
           {type = "unlock-recipe", recipe = "miner_mk1"},
         },
+        prerequisites = {"miner-science-pack"},
           unit = {
           count = 20,
           ingredients = {{"miner-science-pack", 1}},

@@ -7,13 +7,13 @@ data:extend(
     --recipe
     type = "recipe",
     name = "stone-processing",
-    category = "crafting",
+    categories = {"crafting"},
     subgroup = "ritn-miner",
     energy_required = 1.5,
-    enabled = true,
+    enabled = false,
     ingredients =
     {
-      {"stone", 5}
+      {type="item", name="stone", amount=5}
     },
     results=
     {

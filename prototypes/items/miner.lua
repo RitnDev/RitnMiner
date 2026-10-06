@@ -29,31 +29,15 @@ data:extend({
             -- Recipe
             type = "recipe",
             name = "miner_mk1",
-            normal =
+            enabled = false,
+            energy_required = 3,
+            ingredients = 
             {
-                enabled = false,
-                energy_required = 3,
-                ingredients = 
-                {
-                  {"iron-plate",5},
-                  {"iron-gear-wheel",2},
-                  {"burner-mining-drill",2},
-                },
-              result = "miner_mk1",
-              result_count = 1,
+              {type="item", name="iron-plate", amount=5},
+              {type="item", name="iron-gear-wheel", amount=2},
+              {type="item", name="burner-mining-drill", amount=2},
             },
-            expensive =
-            {
-                enabled = false,
-                energy_required = 5,
-                ingredients = 
-                {
-                  {"iron-plate",12},
-                  {"iron-gear-wheel",8},
-                },
-              result = "miner_mk1",
-              result_count = 1,
-            },
+            results = {{type="item", name="miner_mk1", amount=1}},
             order = "a-a1",
             always_show_made_in = true,
             allow_decomposition = false,
@@ -76,33 +60,17 @@ data:extend({
           -- Recipe
           type = "recipe",
           name = "miner_mk2",
-          normal =
+          enabled = false,
+          energy_required = 3,
+          ingredients = 
           {
-              enabled = false,
-              energy_required = 3,
-              ingredients = 
-              {
-                {"iron-plate",5},
-                {"steel-plate",3},
-                {"iron-gear-wheel",2},
-                {"electronic-circuit",1},
-                {"miner_mk1",1}
-              },
-            result = "miner_mk2",
-            result_count = 1,
+            {type="item", name="iron-plate", amount=5},
+            {type="item", name="steel-plate", amount=3},
+            {type="item", name="iron-gear-wheel", amount=2},
+            {type="item", name="electronic-circuit", amount=1},
+            {type="item", name="miner_mk1", amount=1}
           },
-          expensive =
-          {
-              enabled = false,
-              energy_required = 5,
-              ingredients = 
-              {
-                {"iron-plate",12},
-                {"iron-gear-wheel",8},
-              },
-            result = "miner_mk2",
-            result_count = 1,
-          },
+          results = {{type="item", name="miner_mk2", amount=1}},
           order = "a-a2",
           always_show_made_in = true,
           allow_decomposition = false,

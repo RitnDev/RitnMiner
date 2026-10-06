@@ -7,7 +7,7 @@ data:extend(
             type = "tool",
             name = "miner-science-pack",
             icon = "__RitnMiner__/graphics/icons/miner-science-pack.png",
-            icon_size = 64, icon_mipmaps = 4,
+            icon_size = 64,
             subgroup = "science-pack",
             order = "a-a-b",
             stack_size = 200,
@@ -18,14 +18,14 @@ data:extend(
             type = "recipe",
             name = "miner-science-pack",
             energy_required = 8,
-            enabled = true, --false,
+            enabled = false,
             ingredients =
             {
-              {"stone-brick", 4},
-              {"burner-mining-drill", 1}
+              {type="item", name="stone-brick", amount=4},
+              {type="item", name="burner-mining-drill", amount=1}
             },
-            result = "miner-science-pack",
-            result_count = 2,
+            results = {{type="item", name="miner-science-pack", amount=2}},
+            allow_productivity = true,
             crafting_machine_tint = 
             {
                 primary = {r = 0.592, g = 0.565, b = 0.808, a = 1.000},
@@ -35,14 +35,3 @@ data:extend(
             },
         }
 })
-
-local recipes = {"miner-science-pack"}
-local limitation1 = data.raw.module["productivity-module"].limitation
-local limitation2 = data.raw.module["productivity-module-2"].limitation
-local limitation3 = data.raw.module["productivity-module-3"].limitation
-    
-for _,recipe in pairs(recipes) do
-    table.insert(limitation1, recipe)
-    table.insert(limitation2, recipe)
-    table.insert(limitation3, recipe)
-end

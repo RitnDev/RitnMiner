@@ -17,54 +17,21 @@ local disassembler =
     shift = {8, 8}
 }
 
-local item = util.table.deepcopy(data.raw.item["burner-inserter"])
-icons.inserter = {
-	{
-	icon = item.icon,
-    icon_size = item.icon_size,
-	icon_mipmaps = item.icon_mipmaps,
-	}
-}
+local RitnProtoItem = require(ritnlib.defines.class.prototype.item)
+
+icons.inserter = RitnProtoItem("burner-inserter"):getIconLayers()
 table.insert(icons.inserter,disassembler)
 
-local item = util.table.deepcopy(data.raw.item["burner-mining-drill"])
-icons.mining = {
-	{
-	icon = item.icon,
-    icon_size = item.icon_size,
-	icon_mipmaps = item.icon_mipmaps,
-	}
-}
+icons.mining = RitnProtoItem("burner-mining-drill"):getIconLayers()
 table.insert(icons.mining,disassembler)
 
-local item = util.table.deepcopy(data.raw.item["stone-furnace"])
-icons.furnace = {
-	{
-	icon = item.icon,
-    icon_size = item.icon_size,
-	icon_mipmaps = item.icon_mipmaps,
-	}
-}
+icons.furnace = RitnProtoItem("stone-furnace"):getIconLayers()
 table.insert(icons.furnace,disassembler)
 
-local item = util.table.deepcopy(data.raw.item["long-handed-inserter"])
-icons.long_inserter = {
-	{
-	icon = item.icon,
-    icon_size = item.icon_size,
-	icon_mipmaps = item.icon_mipmaps,
-	}
-}
+icons.long_inserter = RitnProtoItem("long-handed-inserter"):getIconLayers()
 table.insert(icons.long_inserter,disassembler)
 
-local item = util.table.deepcopy(data.raw.item["steel-furnace"])
-icons.steel_furnace = {
-	{
-	icon = item.icon,
-    icon_size = item.icon_size,
-	icon_mipmaps = item.icon_mipmaps,
-	}
-}
+icons.steel_furnace = RitnProtoItem("steel-furnace"):getIconLayers()
 table.insert(icons.steel_furnace,disassembler)
 
 
@@ -77,7 +44,7 @@ data:extend({
 			name = "recipe_burner_mining_drill_disassemble",
 			icons = icons.mining,
 			subgroup = "ritn-disassemble",
-			category = "advanced-crafting",
+			categories = {"advanced-crafting"},
 			order = "a[Disassemble]-a[recipe_burner_mining_drill_disassemble]",
 			enabled = false,
 			allow_as_intermediate = false,
@@ -90,8 +57,8 @@ data:extend({
 				},
 			results =
 				{
-					{"stone", 4},
-					{"iron-plate", 4}
+					{type="item", name="stone", amount=4},
+					{type="item", name="iron-plate", amount=4}
 				},
 
 		},
@@ -102,7 +69,7 @@ data:extend({
 			name = "recipe_stone_furnace_disassemble",
 			icons = icons.furnace,
 			subgroup = "ritn-disassemble",
-			category = "advanced-crafting",
+			categories = {"advanced-crafting"},
 			order = "a[Disassemble]-b[recipe_stone_furnace_disassemble]",
 			enabled = false,
 			allow_as_intermediate = false,
@@ -115,7 +82,7 @@ data:extend({
 				},
 			results =		
 				{
-				  {"stone", 3},
+				  {type="item", name="stone", amount=3},
 				},
 				
 	  },
@@ -127,7 +94,7 @@ data:extend({
 			name = "recipe_burner_inserter_disassemble",
 			icons = icons.inserter,
 			subgroup = "ritn-disassemble",
-			category = "advanced-crafting",
+			categories = {"advanced-crafting"},
 			order = "a[Disassemble]-c[recipe_burner_inserter_disassemble]",
 			enabled = false,
 			allow_as_intermediate = false,
@@ -140,7 +107,7 @@ data:extend({
 				},
 			results =		
 				{
-				  {"iron-plate", 2},
+				  {type="item", name="iron-plate", amount=2},
 				},
 				
 	  },
@@ -152,7 +119,7 @@ data:extend({
 			name = "recipe_long_handed_inserter_disassemble",
 			icons = icons.long_inserter,
 			subgroup = "ritn-disassemble",
-			category = "advanced-crafting",
+			categories = {"advanced-crafting"},
 			order = "a[Disassemble]-e[recipe_long_handed_inserter_disassemble]",
 			enabled = false,
 			allow_as_intermediate = false,
@@ -165,9 +132,9 @@ data:extend({
 				},
 			results =		
 				{
-				  {"iron-gear-wheel", 1},
-				  {"iron-plate", 1},
-				  {"electronic-circuit", 1},
+				  {type="item", name="iron-gear-wheel", amount=1},
+				  {type="item", name="iron-plate", amount=1},
+				  {type="item", name="electronic-circuit", amount=1},
 				},
 				
 	  },
@@ -179,7 +146,7 @@ data:extend({
 			name = "recipe_steel_furnace_disassemble",
 			icons = icons.steel_furnace,
 			subgroup = "ritn-disassemble",
-			category = "advanced-crafting",
+			categories = {"advanced-crafting"},
 			order = "a[Disassemble]-f[recipe_steel_furnace_disassemble]",
 			enabled = false,
 			allow_as_intermediate = false,
@@ -192,8 +159,8 @@ data:extend({
 				},
 			results =		
 				{
-				  {"steel-plate", 4},
-				  {"stone-brick", 4}
+				  {type="item", name="steel-plate", amount=4},
+				  {type="item", name="stone-brick", amount=4}
 				},
 				
 	  }

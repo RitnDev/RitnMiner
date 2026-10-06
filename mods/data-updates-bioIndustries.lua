@@ -1,5 +1,5 @@
---Update Bio Industries
-if ritnmods.miner.bio then 
+--Update Bio Industries (inclus dans RitnLumberjack)
+if ritnmods.miner.lumberjack then 
     
     -----------------------------------------------------------------
     local RitnProtoItem = require(ritnlib.defines.class.prototype.item)
@@ -15,11 +15,11 @@ if ritnmods.miner.bio then
     RitnProtoItem("stone-crushed"):changePrototype("pictures", nil)
 
     -- change recipe category
-    RitnProtoRecipe("bi-crushed-stone-1"):changePrototype("category", "ritn-crushing")
-    RitnProtoRecipe("bi-crushed-stone-2"):changePrototype("category", "ritn-crushing")
-    RitnProtoRecipe("bi-crushed-stone-3"):changePrototype("category", "ritn-crushing")
-    RitnProtoRecipe("bi-crushed-stone-4"):changePrototype("category", "ritn-crushing")
-    RitnProtoRecipe("bi-crushed-stone-5"):changePrototype("category", "ritn-crushing")
+    RitnProtoRecipe("bi-crushed-stone-1"):setCategories("ritn-crushing")
+    RitnProtoRecipe("bi-crushed-stone-2"):setCategories("ritn-crushing")
+    RitnProtoRecipe("bi-crushed-stone-3"):setCategories("ritn-crushing")
+    RitnProtoRecipe("bi-crushed-stone-4"):setCategories("ritn-crushing")
+    RitnProtoRecipe("bi-crushed-stone-5"):setCategories("ritn-crushing")
 
     ------------------------------------------------------------------
     -- TECHNOLOGY
@@ -77,10 +77,5 @@ if ritnmods.miner.bio then
             rProtoTech:addRecipe("ritn-stone-brick")
             rProtoTech:addRecipe("ritn-stone")
         end
-    end
-
-    -- RitnLumberjack non activé
-    if not ritnmods.miner.lumberjack then
-        RitnProtoTech("electric-energy-distribution-1"):addRecipe("bi-wooden-pole-big")
     end
 end

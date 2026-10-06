@@ -7,7 +7,7 @@ data:extend({
     --recipe
     type = "recipe",
     name = "shale-oil",
-    category = "oil-processing",
+    categories = {"oil-processing"},
     subgroup = "fluid-recipes",
     energy_required = 5,
     enabled = false,
@@ -25,18 +25,9 @@ data:extend({
     },
     icon = "__RitnMiner__/graphics/icons/shale-oil.png",
     icon_size = 64,
-    icon_mipmaps = 1,
     order = "a-b[sulfuric-acid]",
-    allowed_effects = {productivity}
+    allow_productivity = true
   }
 
 
 })
-
-local limitation1 = data.raw.module["productivity-module"].limitation
-local limitation2 = data.raw.module["productivity-module-2"].limitation
-local limitation3 = data.raw.module["productivity-module-3"].limitation
-
-table.insert(limitation1,"shale-oil")
-table.insert(limitation2,"shale-oil")
-table.insert(limitation3,"shale-oil")

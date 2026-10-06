@@ -3,7 +3,8 @@ if ritnmods.miner.dectorio then
     for _,recipe in pairs(data.raw["recipe"]) do 
         if string.sub(recipe.name,1,5) == "dect-"
         and string.sub(recipe.name,-7) == "-gravel" then 
-            recipe.category = "ritn-crushing"
+            recipe.categories = {"ritn-crushing"}
+            recipe.category = nil
         end
     end
 end

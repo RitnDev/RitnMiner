@@ -8,10 +8,10 @@ if ritnmods.miner.commuLogo then
     --Update recipe bigcommulogo
     RitnProtoRecipe("bigcommulogo"):changePrototype("ingredients", 
         {
-            {"iron-plate",17},
-            {"iron-gear-wheel",17},
-            {"electronic-circuit",17},
-            {"small-lamp",2},
+            {type="item", name="iron-plate", amount=17},
+            {type="item", name="iron-gear-wheel", amount=17},
+            {type="item", name="electronic-circuit", amount=17},
+            {type="item", name="small-lamp", amount=2},
         }
     )
 
@@ -33,7 +33,7 @@ if ritnmods.miner.commuLogo then
             "automation-2",
             "Improved-iron-ore-extraction-2",
             "Improved-copper-ore-extraction-2",
-            "optics",
+            "lamp",
         }
     )
     

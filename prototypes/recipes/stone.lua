@@ -1,21 +1,10 @@
 
-local item_brick = util.table.deepcopy(data.raw.item["stone-brick"])
-local item_stone= util.table.deepcopy(data.raw.item["stone"])
+local RitnProtoItem = require(ritnlib.defines.class.prototype.item)
 
-local icons_stone = {
-      {
-        icon = item_stone.icon,
-        icon_size = item_stone.icon_size,
-        icon_mipmaps = item_stone.icon_mipmaps,
-      },
-      {
-        icon = item_brick.icon,
-        icon_size = item_brick.icon_size,
-        icon_mipmaps = item_brick.icon_mipmaps,
-        scale = 16 / item_brick.icon_size,
-        shift = {-8, 8}
-      }
-}
+local icons_stone = RitnProtoItem("stone"):getIconLayers()
+for _, layer in pairs(RitnProtoItem("stone-brick"):getIconLayers(0.25, {-8, 8})) do
+  table.insert(icons_stone, layer)
+end
 
 data:extend({
     -- stone-brick
@@ -26,14 +15,13 @@ data:extend({
         energy_required = 16,
         enabled = false,
         subgroup = "ritn-miner",
-        category= "ritn-crushing",
+        categories = {"ritn-crushing"},
         icons = icons_stone,
         ingredients =
         {
-          {"stone-brick", 25},
+          {type="item", name="stone-brick", amount=25},
         },
-        result = "stone",
-        result_count = 5,
+        results = {{type="item", name="stone", amount=5}},
         order = "a1"
     }
 
