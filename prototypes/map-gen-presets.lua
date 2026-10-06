@@ -1,3 +1,16 @@
+-- TODO Factorio 2.1 : ce preset "ritn" est au format 1.1 et fait planter le chargement :
+--   Error while running setup for map gen preset "ritn": unexpected content;
+--   map-gen-preset can't have extra values in property tree at ROOT.basic_settings.terrain_segmentation
+-- Correction (deja appliquee dans RitnLumberjack/prototypes/map-gen-presets.lua) :
+--   * basic_settings.terrain_segmentation / water -> autoplace control "water" :
+--       autoplace_controls["water"] = { frequency = <terrain_segmentation>, size = <water> }
+--   * property_expression_names : "control-setting:*" -> "control:*"
+--       "control-setting:aux:bias"                       -> "control:aux:bias"
+--       "control-setting:aux:frequency:multiplier"       -> "control:aux:frequency"
+--       "control-setting:moisture:bias"                  -> "control:moisture:bias"
+--       "control-setting:moisture:frequency:multiplier"  -> "control:moisture:frequency"
+--   * supprimer advanced_settings.difficulty_settings.research_queue_setting
+--     (la file de recherche est toujours active depuis la 2.0)
 
 
 if data.raw["map-gen-presets"]["default"]["ritn"] == nil then
